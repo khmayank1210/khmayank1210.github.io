@@ -126,23 +126,29 @@ footer {
     width: 100%;
 }
 
-/* Responsive Design */
+/* Responsive Design for Mobile Devices */
 @media screen and (max-width: 600px) {
     nav ul li {
         display: block;
-        text-align: center;
+        text-align: center; /* Center align list items for better appearance */
+    }
+
+    .tab button {
+        float: none;
+        display: block;
+        text-align: center; /* Center align text inside buttons */
+        font-size: 16px; /* Increase font size for better readability */
+        padding: 20px; /* Adjust padding for better touch interaction */
+        width: 100%; /* Make buttons full width for easier touch */
     }
 
     section {
         padding: 20px;
     }
 
-    .tab button {
-        float: none;
-        display: block;
-        text-align: left;
-    }
+    /* Adjust other styles as needed for mobile view */
 }
+
 
 /* Specificity increased for .tabcontent ul */
 .tabcontent ul {
