@@ -133,21 +133,30 @@ footer {
         text-align: center; /* Center align list items for better appearance */
     }
 
-    .tab button {
+    .tab button,
+    .tab button:link,
+    .tab button:visited { /* Targeting buttons and their link states */
         float: none;
         display: block;
         text-align: center; /* Center align text inside buttons */
         font-size: 16px; /* Increase font size for better readability */
         padding: 20px; /* Adjust padding for better touch interaction */
         width: 100%; /* Make buttons full width for easier touch */
+        color: black; /* Explicitly setting the font color to black */
+        background-color: inherit; /* Optional: set a specific background color if needed */
+    }
+
+    .tab button:hover,
+    .tab button:active {
+        color: #ddd; /* Color change on hover/active */
+        background-color: #ccc; /* Optional: set a specific background color for hover/active state */
     }
 
     section {
         padding: 20px;
     }
-
-    /* Adjust other styles as needed for mobile view */
 }
+
 
 
 /* Specificity increased for .tabcontent ul */
