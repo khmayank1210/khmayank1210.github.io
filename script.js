@@ -38,28 +38,10 @@ function openTab(event, tabName) {
 
 // Function to open the default tab
 function openDefaultTab() {
-    var defaultTab = document.getElementById("professional summary");
+    var defaultTab = document.querySelector(".tablinks");
     if (defaultTab) {
         openTab({currentTarget: defaultTab}, 'professional summary');
     }
-}
-
-// Function to update active tab based on scroll position
-function updateActiveTab() {
-    var sections = document.querySelectorAll(".tabcontent");
-    var navLinks = document.querySelectorAll(".tablinks");
-
-    sections.forEach(section => {
-        var rect = section.getBoundingClientRect();
-        if (rect.top <= 150 && rect.bottom >= 150) { // Adjust 150 to your preference
-            navLinks.forEach(link => {
-                link.classList.remove("active");
-                if (section.id === link.textContent.trim().toLowerCase()) {
-                    link.classList.add("active");
-                }
-            });
-        }
-    });
 }
 
 // Add event listeners
@@ -70,10 +52,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var tablinks = document.getElementsByClassName("tablinks");
     for (var i = 0; i < tablinks.length; i++) {
         tablinks[i].addEventListener("click", function(event) {
-            openTab(event, this.textContent.trim().toLowerCase());
+            var tabName = this.getAttribute("onclick").split("'")[1]; // Extract the tabName directly
+            openTab(event, tabName);
         });
     }
 });
-
-// Event listener for scrolling
-window.addEventListener("scroll", updateActiveTab);

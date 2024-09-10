@@ -10,7 +10,7 @@
 
 /* Body Styling */
 body {
-    font-family: 'Roboto', Arial, sans-serif; /* Updated font family */
+    font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f4f4f4;
@@ -20,13 +20,13 @@ body {
 header {
     background-color: #007bff;
     color: #fff;
-    text-align: center;
+    text-align: center; /* Ensure header content is centered */
     padding: 20px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
-    font-size: 1.5em; /* Adjusted font size */
+    font-size: 1.5em;
     margin: 0;
     display: inline-block;
     white-space: nowrap;
@@ -50,11 +50,11 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s; /* Transition for color change */
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #ddd; /* Color change on hover */
+    color: #ddd;
     text-decoration: underline;
 }
 
@@ -67,7 +67,7 @@ section {
 section h2 {
     color: #333;
     margin-bottom: 10px;
-    font-size: 1.2em; /* Adjusted font size */
+    font-size: 1.2em;
 }
 
 section ul {
@@ -92,19 +92,25 @@ section ul li {
 
 #experience > div,
 #international\ exposure\/collaboration > div {
-    margin-bottom: 20px; /* Unified rule for spacing */
+    margin-bottom: 20px;
 }
 
-/* Style the buttons that are used to open the tab content */
+/* Tab Container and Buttons Styling */
+.tab {
+    display: flex; /* Use flexbox to keep tabs in one line */
+    flex-wrap: nowrap; /* Prevent the tabs from wrapping into multiple lines */
+    overflow-x: auto; /* Add horizontal scrolling if tabs don't fit */
+}
+
 .tab button {
     background-color: inherit;
-    float: left;
     border: none;
     outline: none;
     cursor: pointer;
-    padding: 14px 16px;
+    padding: 10px 15px; /* Reduced padding to fit more tabs */
     transition: 0.3s;
-    font-weight: bold; /* Makes the font bold */
+    font-weight: bold;
+    white-space: nowrap; /* Prevent wrapping inside buttons */
 }
 
 .tab button:hover {
@@ -130,26 +136,26 @@ footer {
 @media screen and (max-width: 600px) {
     nav ul li {
         display: block;
-        text-align: center; /* Center align list items for better appearance */
+        text-align: center;
     }
 
     .tab button,
     .tab button:link,
-    .tab button:visited { /* Targeting buttons and their link states */
+    .tab button:visited {
         float: none;
         display: block;
-        text-align: center; /* Center align text inside buttons */
-        font-size: 16px; /* Increase font size for better readability */
-        padding: 20px; /* Adjust padding for better touch interaction */
-        width: 100%; /* Make buttons full width for easier touch */
-        color: black; /* Explicitly setting the font color to black */
-        background-color: inherit; /* Optional: set a specific background color if needed */
+        text-align: center;
+        font-size: 16px;
+        padding: 20px;
+        width: 100%;
+        color: black;
+        background-color: inherit;
     }
 
     .tab button:hover,
     .tab button:active {
-        color: #ddd; /* Color change on hover/active */
-        background-color: #ccc; /* Optional: set a specific background color for hover/active state */
+        color: #ddd;
+        background-color: #ccc;
     }
 
     section {
@@ -157,11 +163,15 @@ footer {
     }
 }
 
-
-
 /* Specificity increased for .tabcontent ul */
 .tabcontent ul {
     list-style-type: disc;
     padding-left: 20px;
     margin-left: 20px;
+}
+
+/* Header Centering */
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
